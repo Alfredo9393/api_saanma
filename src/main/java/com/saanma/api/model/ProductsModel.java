@@ -21,6 +21,7 @@ public class ProductsModel {
     private Integer idMeasUnitPriPacking;
     private Integer idMeasUnitSecPacking;
     private Integer idMeasUnitTerPacking;
+    private String comment;
     private Date lastUpdateDate;
 
     public ProductsModel(ProductsEntity dataEntity) {
@@ -32,6 +33,7 @@ public class ProductsModel {
         this.idMeasUnitPriPacking = dataEntity.getIdMeasUnitPriPacking();
         this.idMeasUnitSecPacking = dataEntity.getIdMeasUnitSecPacking();
         this.idMeasUnitTerPacking = dataEntity.getIdMeasUnitTerPacking();
+        this.comment = dataEntity.getComment();
         this.lastUpdateDate = dataEntity.getLastUpdateDate();
     }
 
@@ -99,6 +101,14 @@ public class ProductsModel {
         this.idMeasUnitTerPacking = idMeasUnitTerPacking;
     }
 
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
     public Date getLastUpdateDate() {
         return lastUpdateDate;
     }
@@ -106,6 +116,7 @@ public class ProductsModel {
     public void setLastUpdateDate(Date lastUpdateDate) {
         this.lastUpdateDate = lastUpdateDate;
     }
+
 
 
 

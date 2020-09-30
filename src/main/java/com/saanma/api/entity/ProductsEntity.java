@@ -48,6 +48,9 @@ public class ProductsEntity implements Serializable  {
 
     @Column(name = "IdMeasUnitTerPacking")
     private Integer idMeasUnitTerPacking;
+    
+    @Column(name = "Comment")
+    private String comment;
         
     @Column(name = "LastUpdateDate")
     @Temporal(TemporalType.TIMESTAMP) //TIMESTAMP: Registrar la fecha y hora
@@ -117,6 +120,14 @@ public class ProductsEntity implements Serializable  {
         this.idMeasUnitTerPacking = idMeasUnitTerPacking;
     }
 
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
     public Date getLastUpdateDate() {
         return lastUpdateDate;
     }
@@ -124,9 +135,6 @@ public class ProductsEntity implements Serializable  {
     public void setLastUpdateDate(Date lastUpdateDate) {
         this.lastUpdateDate = lastUpdateDate;
     }
-
-
-
 
     
 }
