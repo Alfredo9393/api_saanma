@@ -17,12 +17,22 @@ public class ProductsModel {
     private String product;
     private String description;
     private Integer idCategoria;
+    private Integer idSupplier;
+    private Integer idMeasUnitPriPacking;
+    private Integer idMeasUnitSecPacking;
+    private Integer idMeasUnitTerPacking;
+    private Date lastUpdateDate;
 
-    public ProductsModel(ProductsEntity productsEntity) {
-        this.id = productsEntity.getId();
-        this.product = productsEntity.getProduct();
-        this.description = productsEntity.getDescription();
-        this.idCategoria = productsEntity.getIdCategoria();
+    public ProductsModel(ProductsEntity dataEntity) {
+        this.id = dataEntity.getId();
+        this.product = dataEntity.getProduct();
+        this.description = dataEntity.getDescription();
+        this.idCategoria = dataEntity.getIdCategoria();
+        this.idSupplier = dataEntity.getIdSupplier();
+        this.idMeasUnitPriPacking = dataEntity.getIdMeasUnitPriPacking();
+        this.idMeasUnitSecPacking = dataEntity.getIdMeasUnitSecPacking();
+        this.idMeasUnitTerPacking = dataEntity.getIdMeasUnitTerPacking();
+        this.lastUpdateDate = dataEntity.getLastUpdateDate();
     }
 
     public Integer getId() {
@@ -56,5 +66,47 @@ public class ProductsModel {
     public void setIdCategoria(Integer idCategoria) {
         this.idCategoria = idCategoria;
     }
+
+    public Integer getIdSupplier() {
+        return idSupplier;
+    }
+
+    public void setIdSupplier(Integer idSupplier) {
+        this.idSupplier = idSupplier;
+    }
+
+    public Integer getIdMeasUnitPriPacking() {
+        return idMeasUnitPriPacking;
+    }
+
+    public void setIdMeasUnitPriPacking(Integer idMeasUnitPriPacking) {
+        this.idMeasUnitPriPacking = idMeasUnitPriPacking;
+    }
+
+    public Integer getIdMeasUnitSecPacking() {
+        return idMeasUnitSecPacking;
+    }
+
+    public void setIdMeasUnitSecPacking(Integer idMeasUnitSecPacking) {
+        this.idMeasUnitSecPacking = idMeasUnitSecPacking;
+    }
+
+    public Integer getIdMeasUnitTerPacking() {
+        return idMeasUnitTerPacking;
+    }
+
+    public void setIdMeasUnitTerPacking(Integer idMeasUnitTerPacking) {
+        this.idMeasUnitTerPacking = idMeasUnitTerPacking;
+    }
+
+    public Date getLastUpdateDate() {
+        return lastUpdateDate;
+    }
+
+    public void setLastUpdateDate(Date lastUpdateDate) {
+        this.lastUpdateDate = lastUpdateDate;
+    }
+
+
 
 }

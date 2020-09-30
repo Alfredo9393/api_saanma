@@ -41,9 +41,9 @@ public class MeasUnitsService {
         }
     }
     
-    public boolean delete(int id){
+    public boolean delete(int idMeasUnits){
         try {
-            MeasUnitsEntity measUnitsEntity = measUnitsRepository.findById(id);
+            MeasUnitsEntity measUnitsEntity = measUnitsRepository.findById(idMeasUnits);
             measUnitsRepository.delete(measUnitsEntity);
             return true;
         } catch (Exception e) {

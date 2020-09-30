@@ -41,9 +41,9 @@ public class PackagingTypesService {
         }
     }
  
-    public boolean delete(int id){
+    public boolean delete(int idPackagingType){
         try {
-            PackagingTypesEntity packagingTypesEntity = packagingTypesRepository.findById(id);
+            PackagingTypesEntity packagingTypesEntity = packagingTypesRepository.findById(idPackagingType);
             packagingTypesRepository.delete(packagingTypesEntity);
             return true;
         } catch (Exception e) {
@@ -53,8 +53,8 @@ public class PackagingTypesService {
     
     public List<PackagingTypesModel> getAll(){
         List<PackagingTypesModel> packagingTypesModel = new ArrayList<>();
-        List<PackagingTypesEntity> measUnitsEntity = packagingTypesRepository.findAll();
-        measUnitsEntity.forEach((data) -> { 
+        List<PackagingTypesEntity> packagingTypesEntity = packagingTypesRepository.findAll();
+        packagingTypesEntity.forEach((data) -> { 
             packagingTypesModel.add(new PackagingTypesModel(data));//convierte entidad a modelo
         }); 
         return packagingTypesModel;

@@ -34,12 +34,24 @@ public class ProductsEntity implements Serializable  {
     @Column(name = "Description")
     private String description;
     
+    @Column(name = "IdCategoria")
+    private Integer idCategoria;
+    
+    @Column(name = "IdSupplier")
+    private Integer idSupplier;
+    
+    @Column(name = "IdMeasUnitPriPacking")
+    private Integer idMeasUnitPriPacking;
+
+    @Column(name = "IdMeasUnitSecPacking")
+    private Integer idMeasUnitSecPacking;
+
+    @Column(name = "IdMeasUnitTerPacking")
+    private Integer idMeasUnitTerPacking;
+        
     @Column(name = "LastUpdateDate")
     @Temporal(TemporalType.TIMESTAMP) //TIMESTAMP: Registrar la fecha y hora
     private Date lastUpdateDate;
-   
-    @Column(name = "IdCategoria")
-    private Integer idCategoria;
 
     public Integer getId() {
         return id;
@@ -48,7 +60,7 @@ public class ProductsEntity implements Serializable  {
     public void setId(Integer id) {
         this.id = id;
     }
-            
+
     public String getProduct() {
         return product;
     }
@@ -65,6 +77,46 @@ public class ProductsEntity implements Serializable  {
         this.description = description;
     }
 
+    public Integer getIdCategoria() {
+        return idCategoria;
+    }
+
+    public void setIdCategoria(Integer idCategoria) {
+        this.idCategoria = idCategoria;
+    }
+
+    public Integer getIdSupplier() {
+        return idSupplier;
+    }
+
+    public void setIdSupplier(Integer idSupplier) {
+        this.idSupplier = idSupplier;
+    }
+
+    public Integer getIdMeasUnitPriPacking() {
+        return idMeasUnitPriPacking;
+    }
+
+    public void setIdMeasUnitPriPacking(Integer idMeasUnitPriPacking) {
+        this.idMeasUnitPriPacking = idMeasUnitPriPacking;
+    }
+
+    public Integer getIdMeasUnitSecPacking() {
+        return idMeasUnitSecPacking;
+    }
+
+    public void setIdMeasUnitSecPacking(Integer idMeasUnitSecPacking) {
+        this.idMeasUnitSecPacking = idMeasUnitSecPacking;
+    }
+
+    public Integer getIdMeasUnitTerPacking() {
+        return idMeasUnitTerPacking;
+    }
+
+    public void setIdMeasUnitTerPacking(Integer idMeasUnitTerPacking) {
+        this.idMeasUnitTerPacking = idMeasUnitTerPacking;
+    }
+
     public Date getLastUpdateDate() {
         return lastUpdateDate;
     }
@@ -73,13 +125,8 @@ public class ProductsEntity implements Serializable  {
         this.lastUpdateDate = lastUpdateDate;
     }
 
-    public Integer getIdCategoria() {
-        return idCategoria;
-    }
 
-    public void setIdCategoria(Integer idCategoria) {
-        this.idCategoria = idCategoria;
-    }
+
 
     
 }

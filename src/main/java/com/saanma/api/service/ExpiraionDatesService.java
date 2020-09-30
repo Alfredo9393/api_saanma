@@ -5,7 +5,10 @@
  */
 package com.saanma.api.service;
 import com.saanma.api.entity.ExpiraionDatesEntity;
+import com.saanma.api.model.ExpiraionDatesModel;
 import com.saanma.api.repository.ExpiraionDatesRepository;
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,13 +41,23 @@ public class ExpiraionDatesService {
         }
     }
     
-    public boolean delete(int id){
+    public boolean delete(int idExpiraionDate){
         try {
-            ExpiraionDatesEntity expiraionDatesEntity = expiraionDatesRepository.findById(id);
+            ExpiraionDatesEntity expiraionDatesEntity = expiraionDatesRepository.findById(idExpiraionDate);
             expiraionDatesRepository.delete(expiraionDatesEntity);
             return true;
         } catch (Exception e) {
             return false;
         }
     }
+    
+    public List<ExpiraionDatesModel> getAll(){
+        List<ExpiraionDatesModel> expiraionDatesModel = new ArrayList<>();
+        List<ExpiraionDatesEntity> expiraionDatesEntity = expiraionDatesRepository.findAll();
+        expiraionDatesEntity.forEach((data) -> { 
+            expiraionDatesModel.add(new ExpiraionDatesModel(data));//convierte entidad a modelo
+        }); 
+        return expiraionDatesModel;
+    }
+
 }

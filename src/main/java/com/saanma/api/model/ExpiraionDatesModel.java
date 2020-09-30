@@ -5,6 +5,7 @@
  */
 package com.saanma.api.model;
 
+import com.saanma.api.entity.ExpiraionDatesEntity;
 import java.util.Date;
 
 /**
@@ -19,6 +20,15 @@ public class ExpiraionDatesModel {
     private Boolean active;
     private Date lastUpdateDate;
 
+    public ExpiraionDatesModel(ExpiraionDatesEntity dataEntity) {
+        this.id = dataEntity.getId();
+        this.idProductPurchase = dataEntity.getIdProductPurchase();
+        this.expiraionDate = dataEntity.getExpiraionDate();
+        this.count = dataEntity.getCount();
+        this.active = dataEntity.getActive();
+        this.lastUpdateDate = dataEntity.getLastUpdateDate();
+    }
+        
     public Integer getId() {
         return id;
     }
